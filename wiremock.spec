@@ -21,7 +21,7 @@ WireMock is a simulator for HTTP-based APIs. Some might consider it a service vi
 curl -L %{url} > wiremock.jar
 
 %install
-dnf install -y tree
+yum install -y tree
 ls
 pwd
 tree
