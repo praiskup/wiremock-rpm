@@ -29,8 +29,8 @@ curl -L %{url} > wiremock.jar
 ls
 pwd
 tree
-%{__install} -m 0755 -d %{buildroot}/usr/lib/%{name}
-%{__install} -m 755 %{SOURCE0} %{buildroot}/usr/lib/%{name}/%{name}
+%{__install} -m 0755 -d %{buildroot}/usr/lib/%{name}/%{name}
+%{__install} -m 0755 %{SOURCE0} %{buildroot}/usr/lib/%{name}/%{name}
 %{__install} -m 0755 -d %{buildroot}/usr/lib/%{name}/mappings
 cp %{SOURCE1} %{buildroot}/usr/lib/%{name}/mappings
 %if %{use_systemd}
@@ -60,7 +60,7 @@ cp %{SOURCE1} %{buildroot}/usr/lib/%{name}/mappings
 
 %files
 /usr/lib/%{name}/%{name}
-/usr/lib/%{name}/mappings/%{SOURCE1}
+/usr/lib/%{name}/mappings/503.json
 %dir %attr(0775, wiremock, wiremock) /usr/lib/%{name}/%{name}
 %if %{use_systemd}
 %{_unitdir}/%{name}.service
